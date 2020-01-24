@@ -1,0 +1,35 @@
+Q1. gcloud compute instances create sv-vm --image-project ubuntu-os-cloud --image ubuntu-1604-xenial-v20200108 --machine-type=f1-micro --zone=us-east1-b
+
+gcloud compute disks list
+
+gcloud compute disks resize sv-vm --zone=us-east1-b --size 50
+
+For checking disk-space:
+df -h
+
+For checking partitions:
+lsblk
+
+Grow Partition:
+sudo growpart /dev/sda 1
+
+Resize the file system:
+sudo resize2fs /dev/sda1
+
+Verify the disk space:
+df -h
+
+
+Q3. gsutil mb gs://sarvesh-bucket/
+
+Q3a. gsutil cp -r gs://sv-bucket/* gs://ayushbucket2
+
+Q3b. gsutil cp vpc-sv.py gs://sarvesh-bucket/
+
+Q3c. gsutil cp gs://sarvesh-bucket/vpc-sv.py test-dir-sv
+
+Q3d. gsutil ls gs://sv-bucket
+
+Q3e. gsutil rm gs://sarvesh-bucket/vpc-sv.py
+
+
